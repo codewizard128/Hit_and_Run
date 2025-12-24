@@ -110,12 +110,7 @@ export default function Footer() {
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-600">
           <p>© 2025 Hit & Run League. All Rights Reserved.</p>
           <div className="flex gap-8">
-            <a href="#" className="hover:text-red-600 transition-colors">
-              Privacy Protocol
-            </a>
-            <a href="#" className="hover:text-red-600 transition-colors">
-              Terms of Engagement
-            </a>
+             
           </div>
         </div>
       </div>
