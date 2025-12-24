@@ -63,7 +63,7 @@ const Hero = () => (
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg text-slate-400 max-w-md mx-auto lg:mx-0 mb-8 border-l-4 border-red-600 pl-4 sm:pl-6">
-            The world's most intense field sport. Precision mechanics meet
+            The most intense field sport. Precision mechanics meet
             explosive speed in the ultimate test of athleticism.
           </p>
 

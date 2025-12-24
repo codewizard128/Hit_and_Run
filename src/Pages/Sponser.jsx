@@ -31,11 +31,7 @@ const generateSponsors = () => {
   
   // Fill some slots with dummy data
   const premiumSponsors = [
-    { id: 1, name: "RedBull", img: "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/RedBullEnergyDrink.svg/1200px-RedBullEnergyDrink.svg.png", color: "bg-blue-900" },
-    { id: 2, name: "Nike", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png", color: "bg-white" },
-    { id: 15, name: "Gatorade", img: "https://upload.wikimedia.org/wikipedia/en/thumb/1/13/Gatorade_logo.svg/1200px-Gatorade_logo.svg.png", color: "bg-orange-600" },
-    { id: 44, name: "Under Armour", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/1200px-Under_armour_logo.svg.png", color: "bg-black" },
-    { id: 99, name: "GoPro", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/GoPro_logo.svg/1200px-GoPro_logo.svg.png", color: "bg-blue-500" },
+    { id: 1, name: "Hit and Run", img: "https://res.cloudinary.com/debuweamw/image/upload/v1766586180/WhatsApp_Image_2025-12-13_at_7.45.47_PM_xnriat.jpg", color: "bg-blue-900" },
   ];
 
   premiumSponsors.forEach(s => {

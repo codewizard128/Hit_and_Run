@@ -61,7 +61,7 @@ export default function Footer() {
               </div>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
-              The world's premier high-intensity field sport. Precision
+              The premier high-intensity field sport. Precision
               mechanics meet explosive speed in the ultimate test of
               athleticism.
             </p>

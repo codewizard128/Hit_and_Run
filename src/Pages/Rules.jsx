@@ -295,6 +295,30 @@ export default function SectionRules() {
                 <ScoringCard />
             </div>
         </div>
+        <div class="flex flex-col items-center gap-4 mt-6">
+  <p class="text-red-300 text-sm tracking-wide text-center">
+    Download the complete rules of <span class="font-semibold text-red-400">Hit &amp; Run</span>
+  </p>
+
+  <a
+    href="https://res.cloudinary.com/debuweamw/image/upload/v1766586029/Hit_and_Run_1_r5bhda.pdf"
+    download
+    class="inline-flex items-center gap-2 px-6 py-2 rounded-lg
+           bg-red-600 text-white font-semibold uppercase
+           hover:bg-red-700 transition duration-300
+           shadow-md hover:shadow-lg active:scale-95"
+  >
+     
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none"
+         viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V4" />
+    </svg>
+
+    Download
+  </a>
+</div>
+
       </div>
 
       {/* Lightbox Modal */}

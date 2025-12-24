@@ -146,7 +146,7 @@ export default function RegistrationForm() {
           {/* LEFT */}
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black italic text-white mb-6">
-              INITIATE <br />
+               
               <span className="text-red-600">REGISTRATION</span>
             </h1>
 
@@ -195,7 +195,7 @@ export default function RegistrationForm() {
                 icon={Phone}
                 label="Phone"
                 name="phone"
-                placeholder="+91 98765 43210"
+                placeholder="+91 xxxxxxxxxx"
                 value={formData.phone}
                 onChange={handleChange}
                 required
@@ -216,9 +216,7 @@ export default function RegistrationForm() {
                     Select Sport
                   </option>
                   <option>Hit and Run</option>
-                  <option>Cricket</option>
-                  <option>Football</option>
-                  <option>Basketball</option>
+                   
                 </select>
               </div>
 
