@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import mainImage from '../assets/images/Frame 11.png'
+import mainImage from '../assets/images/Group 60.png'
 /* ---------- Button ---------- */
 const Button = ({
   children,

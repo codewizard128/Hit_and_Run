@@ -8,6 +8,7 @@ import {
   ArrowRight,
   MapPin,
   Phone,
+  MessageCircle
 } from "lucide-react";
 import logo from '../assets/images/logo.jpeg'
 const SocialLink = ({ icon: Icon, href }) => (
@@ -93,7 +94,7 @@ export default function Footer() {
             <ul className="space-y-4">
                
               <li className="flex items-center gap-3 text-slate-400 text-sm">
-                <Phone size={18} className="text-red-600 flex-shrink-0" />
+                <MessageCircle size={18} className="text-red-600 flex-shrink-0" />
                 <span>+91 9061655123</span>
               </li>
               <li className="flex items-center gap-3 text-slate-400 text-sm">
@@ -108,7 +109,7 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-900 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest text-slate-600">
-          <p>© 2025 Hit & Run League. All Rights Reserved.</p>
+          <p>© 2026 Hit & Run. All Rights Reserved.</p>
           <div className="flex gap-8">
              
           </div>

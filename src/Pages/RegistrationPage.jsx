@@ -14,7 +14,9 @@ import {
 const SlashButton = ({ children, disabled, type = "button", className = "" }) => (
   <button
     type={type}
-    disabled={disabled}
+    onClick={()=>{
+      window.location.href="https://chat.whatsapp.com/HgjN9Xr7bG32TUDOvobyp0"
+    }}
     className={`w-full inline-flex items-center justify-center px-6 sm:px-8 py-4 font-black italic uppercase tracking-widest text-white transition-all duration-200 
     bg-red-600 hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed
     md:-skew-x-12 ${className}`}
@@ -119,10 +121,12 @@ export default function RegistrationForm() {
             You're In
           </h2>
           <p className="text-slate-400 mb-6">
-            Check your email for mission details.
+            Join the whatsapp groups and win the Game
           </p>
-          <SlashButton className="bg-green-600 hover:bg-green-700">
-            Join Squad Chat
+          <SlashButton className="bg-green-600 hover:bg-green-700"
+          
+          >
+            Join Whatsapp
           </SlashButton>
         </motion.div>
       </div>

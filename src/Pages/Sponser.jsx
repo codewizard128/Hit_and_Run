@@ -7,7 +7,7 @@ import { Trophy, Star, Zap, Plus, ExternalLink, X } from 'lucide-react';
 const Header = ({ title, subtitle }) => (
   <div className="text-center mb-16 max-w-4xl mx-auto px-6 relative z-10">
     <div className="inline-block px-4 py-1 mb-6 bg-red-600 transform -skew-x-12 border-l-4 border-red-400">
-      <span className="block transform skew-x-12 text-white font-bold uppercase tracking-widest text-xs">
+      <span className="block transform skew-x-12 text-white font-bold uppercase tracking-widest text-2xl">
         UNITE !
       </span>
     </div>
@@ -193,7 +193,7 @@ export default function Sponsors() {
           title={<>SPONSER <span className="text-red-600"> & PARTICIPANTS</span></>}
           subtitle="Our ecosystem of elite partners. Each cell represents a pillar of support for the Hit & Run League."
         />
-
+        <h1 className=' text-center text-4xl mb-10 font-black italic'>Sponsors Calender</h1>
         {/* The Chessboard Grid */}
         <div className="max-w-4xl mx-auto relative">
           {/* Border Frame */}

@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DividerSection = () => {
+const DividerSection3 = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -14,7 +14,7 @@ const DividerSection = () => {
         trackRef.current,
         { xPercent: 0 },
         {
-          xPercent: -50,
+          xPercent: 10,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -33,7 +33,7 @@ const DividerSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full overflow-hidden bg-red-600 py-6 transform -skew-y-2 border-y-4 border-black"
+      className="relative w-full overflow-hidden bg-red-600 py-6 transform -skew-y-2 border-y-4 border-black -translate-y-9"
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/10 pointer-events-none" />
@@ -45,15 +45,11 @@ const DividerSection = () => {
       >
         {[...Array(8)].map((_, i) => (
           <div key={i} className="flex items-center mx-6 gap-8">
-            <span className="text-5xl md:text-7xl font-black italic text-black uppercase tracking-tighter">
-              HIT HARD RUN FAST 
+            <span className="text-2xl md:text-4xl font-black italic text-black uppercase ">
+              ENTRY TO THE GAME IS <span className=" text-white">SPONSOR'S BILL !!!</span>
             </span>
 
-           
-
-            
-
-            <span className="text-4xl text-black/50 mx-4">///</span>
+            <span className="text-2xl text-black/50 mx-4">///</span>
           </div>
         ))}
       </div>
@@ -61,4 +57,4 @@ const DividerSection = () => {
   );
 };
 
-export default DividerSection;
+export default DividerSection3;

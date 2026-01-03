@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const DividerSection = () => {
+const DividerSection2 = () => {
   const sectionRef = useRef(null);
   const trackRef = useRef(null);
 
@@ -14,7 +14,7 @@ const DividerSection = () => {
         trackRef.current,
         { xPercent: 0 },
         {
-          xPercent: -50,
+          xPercent: 10,
           ease: "none",
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -46,12 +46,8 @@ const DividerSection = () => {
         {[...Array(8)].map((_, i) => (
           <div key={i} className="flex items-center mx-6 gap-8">
             <span className="text-5xl md:text-7xl font-black italic text-black uppercase tracking-tighter">
-              HIT HARD RUN FAST 
+              👕 RECREATIVE & REWARDING 👟
             </span>
-
-           
-
-            
 
             <span className="text-4xl text-black/50 mx-4">///</span>
           </div>
@@ -61,4 +57,4 @@ const DividerSection = () => {
   );
 };
 
-export default DividerSection;
+export default DividerSection2;

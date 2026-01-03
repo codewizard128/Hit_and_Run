@@ -113,7 +113,7 @@ export default function ScrollSection() {
             Game <span className="text-red-600">Evolution</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            From the concave Bill to the leather Sort. Scroll to explore the mechanics of the world's most intense field sport.
+            From the concave Bill to the leather Sort.Explore the new intense field sport.
           </p>
         </div>
       </div>

@@ -14,6 +14,8 @@ import Footer from "./Components/Footer";
 import ScrollSection from "./Components/ScrollSection";
 import DividerSection from "./Components/Divider";
 import AppLoader from "./Components/Loading";
+import DividerSection2 from "./Components/Divider2";
+import DividerSection3 from "./Components/Divider3";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,9 +71,11 @@ export default function App() {
               element={
                 <>
                   <Hero />
-                  <DividerSection />
+                  <DividerSection2/>
                   <About />
+                  <DividerSection />
                   <ScrollSection />
+                  <DividerSection3/>
                   <RegistrationForm />
                 </>
               }

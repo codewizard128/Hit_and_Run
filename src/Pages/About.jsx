@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { Target, Zap, Users, Crosshair } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import img1 from '../assets/images/img1.JPG'
+import img1 from '../assets/images/Group 61 (2).png'
 gsap.registerPlugin(ScrollTrigger);
 
 // Feature Card
@@ -163,8 +163,8 @@ const About = () => {
               ref={textRef}
               className="text-base sm:text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0"
             >
-              Hit & Run isn't just a sport—it's a test of human limits.
-              Precision meets explosive sprinting where hesitation means elimination.
+              Hit & Run isn't just a sport—it's a Recreative and Rewarding game.
+              The entry to this game is sponsor's bill.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
@@ -178,7 +178,7 @@ const About = () => {
                   key={i}
                   ref={(el) => (cardsRef.current[i] = el)}
                   {...item}
-                  desc="Elite-level execution under pressure."
+                   
                 />
               ))}
             </div>
