@@ -8,10 +8,10 @@ const Header = ({ title, subtitle }) => (
   <div className="text-center mb-16 max-w-4xl mx-auto px-6 relative z-10">
     <div className="inline-block px-4 py-1 mb-6 bg-red-600 transform -skew-x-12 border-l-4 border-red-400">
       <span className="block transform skew-x-12 text-white font-bold uppercase tracking-widest text-xs">
-        Partners & Allies
+        UNITE !
       </span>
     </div>
-    <h2 className="text-5xl md:text-7xl font-black italic text-white mb-6 tracking-tighter leading-[0.85]">
+    <h2 className="text-4xl md:text-7xl font-black italic text-white mb-6 tracking-tighter leading-[0.85]">
       {title}
     </h2>
     <div className="flex items-center justify-center gap-3 mb-8">
@@ -190,7 +190,7 @@ export default function Sponsors() {
 
       <div className="container mx-auto px-4 relative z-10">
         <Header 
-          title={<>Our <span className="text-red-600">Sponsers</span></>}
+          title={<>SPONSER <span className="text-red-600"> & PARTICIPANTS</span></>}
           subtitle="Our ecosystem of elite partners. Each cell represents a pillar of support for the Hit & Run League."
         />
 

@@ -78,7 +78,7 @@ export default function Footer() {
               Explore
             </h4>
             <ul className="space-y-4">
-              <FooterLink text="The Game" href="#about" />
+              <FooterLink text="Home" href="/" />
               <FooterLink text="Rules & Equip" href="/rules" />
               <FooterLink text="Our Sponsors" href="/sponsors" />
               <FooterLink text="Register" href="#register" />
