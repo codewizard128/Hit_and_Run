@@ -67,9 +67,8 @@ export default function Footer() {
               athleticism.
             </p>
             <div className="flex gap-4">
-              <SocialLink icon={Twitter} href="#" />
-              <SocialLink icon={Instagram} href="#" />
-              <SocialLink icon={Youtube} href="#" />
+              <SocialLink icon={Instagram} href="https://www.instagram.com/hitandrun_123?igsh=MXRtNGw2M2dnYWk2OA==" />
+              <SocialLink icon={Youtube} href="https://youtube.com/@hitandrun-b7d?si=HKDbqnSgJT1EJDwz" />
             </div>
           </div>
 
