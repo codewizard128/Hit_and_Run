@@ -15,6 +15,8 @@ const SlashButton = ({ children, disabled, type = "button", className = "" }) =>
   <button
     type={type}
     onClick={()=>{
+      console.log("sdftyghuijko");
+      
       window.location.href="https://chat.whatsapp.com/HgjN9Xr7bG32TUDOvobyp0"
     }}
     className={`w-full inline-flex items-center justify-center px-6 sm:px-8 py-4 font-black italic uppercase tracking-widest text-white transition-all duration-200 

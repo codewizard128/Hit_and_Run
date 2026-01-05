@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Trophy, Star, Zap, Plus, ExternalLink, X } from 'lucide-react';
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Trophy, Star, Zap, Plus, ExternalLink, X } from "lucide-react";
 
 // --- SUB-COMPONENTS ---
 
@@ -28,13 +28,13 @@ const Header = ({ title, subtitle }) => (
 // --- MOCK DATA GENERATOR ---
 const generateSponsors = () => {
   const sponsors = Array(100).fill(null);
-  
+
   // Fill some slots with dummy data
   const premiumSponsors = [
-    { id: 1, name: "Hit and Run", img: "https://res.cloudinary.com/debuweamw/image/upload/v1766586180/WhatsApp_Image_2025-12-13_at_7.45.47_PM_xnriat.jpg", color: "bg-blue-900" },
+     
   ];
 
-  premiumSponsors.forEach(s => {
+  premiumSponsors.forEach((s) => {
     sponsors[s.id] = s;
   });
 
@@ -45,18 +45,18 @@ const SponsorCell = ({ index, data, onClick }) => {
   const row = Math.floor(index / 10);
   const col = index % 10;
   const isDark = (row + col) % 2 === 1;
-  
+
   // Base style for the chessboard look
   const baseClasses = `
     relative aspect-square flex items-center justify-center 
     transition-all duration-300 border border-slate-900/50
-    ${isDark ? 'bg-slate-900/80' : 'bg-slate-900/40'}
+    ${isDark ? "bg-white" : "bg-black"}
     hover:z-20 hover:scale-110 hover:shadow-2xl hover:border-red-500/50 cursor-pointer
     group overflow-hidden
   `;
 
   return (
-    <motion.div 
+    <motion.div
       className={baseClasses}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -68,10 +68,10 @@ const SponsorCell = ({ index, data, onClick }) => {
         // Occupied Cell
         <div className="w-full h-full p-4 flex items-center justify-center relative">
           <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-transparent to-transparent opacity-60"></div>
-          <img 
-            src={data.img} 
-            alt={data.name} 
-            className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 drop-shadow-lg relative z-10" 
+          <img
+            src={data.img}
+            alt={data.name}
+            className="w-full h-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110 drop-shadow-lg relative z-10"
           />
           {/* Shine effect */}
           <div className="absolute top-0 -left-[100%] w-1/2 h-full bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12 group-hover:animate-shine" />
@@ -85,33 +85,39 @@ const SponsorCell = ({ index, data, onClick }) => {
           </span>
         </div>
       )}
-      
+
       {/* Coordinate Label (Optional - like real chess board) */}
-      <div className="absolute bottom-1 right-1 text-[8px] text-slate-800 font-mono opacity-50 select-none">
-        {String.fromCharCode(65 + col)}{8 - row}
-      </div>
+      {!isDark ? (
+        <div className="absolute bottom-1 right-1 text-[18px] text-white font-mono opacity-70 select-none">
+          {col}
+        </div>
+      ) : (
+        <div className="absolute bottom-1 right-1 text-[18px] text-black font-mono opacity-70 select-none">
+          {col}
+        </div>
+      )}
     </motion.div>
   );
 };
 
 const SponsorModal = ({ data, onClose }) => (
-  <motion.div 
+  <motion.div
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
     onClick={onClose}
   >
-    <div 
+    <div
       className="bg-slate-900 border-2 border-red-600 w-full max-w-md transform -skew-x-3 p-1 shadow-2xl relative"
-      onClick={e => e.stopPropagation()}
+      onClick={(e) => e.stopPropagation()}
     >
       {/* Decorative corners */}
       <div className="absolute -top-1 -left-1 w-4 h-4 bg-red-600"></div>
       <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-red-600"></div>
 
       <div className="bg-black p-8 transform skew-x-3 relative">
-        <button 
+        <button
           onClick={onClose}
           className="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors"
         >
@@ -122,15 +128,31 @@ const SponsorModal = ({ data, onClose }) => (
           // Existing Sponsor Info
           <div className="text-center">
             <div className="w-32 h-32 mx-auto bg-white/5 rounded-full flex items-center justify-center p-6 mb-6 border border-slate-800">
-              <img src={data.img} alt={data.name} className="w-full h-full object-contain" />
+              <img
+                src={data.img}
+                alt={data.name}
+                className="w-full h-full object-contain"
+              />
             </div>
-            <h3 className="text-3xl font-black italic text-white mb-2 uppercase">{data.name}</h3>
-            <p className="text-red-500 text-xs font-bold tracking-widest uppercase mb-6">Official Partner</p>
-            <p className="text-slate-400 text-sm mb-8 leading-relaxed">
-              Proud supporter of the Hit & Run League. Powering athletes to reach their peak performance in the arena.
+            <h3 className="text-3xl font-black italic text-white mb-2 uppercase">
+              {data.name}
+            </h3>
+            <p className="text-red-500 text-xs font-bold tracking-widest uppercase mb-6">
+              Official Partner
             </p>
-            <a href="#" className="inline-flex items-center gap-2 text-white hover:text-red-500 transition-colors font-bold uppercase text-sm group">
-              Visit Website <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+            <p className="text-slate-400 text-sm mb-8 leading-relaxed">
+              Proud supporter of the Hit & Run League. Powering athletes to
+              reach their peak performance in the arena.
+            </p>
+            <a
+              href="#"
+              className="inline-flex items-center gap-2 text-white hover:text-red-500 transition-colors font-bold uppercase text-sm group"
+            >
+              Visit Website{" "}
+              <ExternalLink
+                size={16}
+                className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"
+              />
             </a>
           </div>
         ) : (
@@ -139,11 +161,26 @@ const SponsorModal = ({ data, onClose }) => (
             <div className="w-20 h-20 mx-auto bg-red-600/10 rounded-full flex items-center justify-center mb-6 border border-red-600/30 text-red-500">
               <Zap size={32} />
             </div>
-            <h3 className="text-3xl font-black italic text-white mb-4 uppercase">Claim This Cell</h3>
+            <h3 className="text-3xl font-black italic text-white mb-4 uppercase">
+              Claim This Cell
+            </h3>
             <p className="text-slate-400 text-sm mb-8 leading-relaxed">
-              Join the elite grid. Showcase your brand to thousands of athletes and fans in the 10x10 arena.
+              Join the elite grid. Showcase your brand to thousands of athletes
+              and fans in the 10x10 arena.
             </p>
-            <button className="w-full bg-red-600 hover:bg-red-700 text-white font-black italic uppercase py-4 tracking-widest transition-all clip-path-slash">
+            <button
+              className="w-full bg-red-600 hover:bg-red-700 text-white font-black italic uppercase py-4 tracking-widest transition-all clip-path-slash"
+              onClick={() => {
+                const phoneNumber = "919061655123";  
+                const message = "Hi, I am interested in becoming a sponsor.";
+
+                const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+                  message
+                )}`;
+
+                window.open(url, "_blank");
+              }}
+            >
               Become a Sponsor
             </button>
           </div>
@@ -178,51 +215,50 @@ export default function Sponsors() {
       `}</style>
 
       {/* Dotted Texture Overlay */}
-      <div 
-          className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
-          style={{ 
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 0h2v2H5V1zm4 0h2v2H9V1zm4 0h2v2h-2V1zm4 0h2v2h-2V1zM1 5h2v2H1V5zm4 0h2v2H5V5zm4 0h2v2H9V5zm4 0h2v2h-2V5zm4 0h2v2h-2V5zM1 9h2v2H1V9zm4 0h2v2H5V9zm4 0h2v2H9V9zm4 0h2v2h-2V9zm4 0h2v2h-2V9zM1 13h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM1 17h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")` 
-          }}
+      <div
+        className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1h2v2H1V1zm4 0h2v2H5V1zm4 0h2v2H9V1zm4 0h2v2h-2V1zm4 0h2v2h-2V1zM1 5h2v2H1V5zm4 0h2v2H5V5zm4 0h2v2H9V5zm4 0h2v2h-2V5zm4 0h2v2h-2V5zM1 9h2v2H1V9zm4 0h2v2H5V9zm4 0h2v2H9V9zm4 0h2v2h-2V9zm4 0h2v2h-2V9zM1 13h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM1 17h2v2H1v-2zm4 0h2v2H5v-2zm4 0h2v2H9v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+        }}
       />
 
       {/* Geometric Bridge */}
       <div className="absolute top-0 left-0 w-full h-24 bg-slate-950 transform -skew-y-2 origin-top-left z-10 -mt-12 shadow-2xl border-b border-white/5"></div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <Header 
-          title={<>SPONSER <span className="text-red-600"> & PARTICIPANTS</span></>}
+        <Header
+          title={
+            <>
+              SPONSER <span className="text-red-600"> & PARTICIPANTS</span>
+            </>
+          }
           subtitle="Our ecosystem of elite partners. Each cell represents a pillar of support for the Hit & Run League."
         />
-        <h1 className=' text-center text-4xl mb-10 font-black italic'>Sponsors Calender</h1>
+        <h1 className=" text-center text-4xl mb-10 font-black italic">
+          Sponsors Calender
+        </h1>
         {/* The Chessboard Grid */}
         <div className="max-w-4xl mx-auto relative">
-          {/* Border Frame */}
-          <div className="absolute -inset-4 border-2 border-red-600/20 z-0 pointer-events-none transform skew-x-1"></div>
-          
           {/* Grid Container */}
           {/* On mobile: 5 cols x 20 rows. On Desktop: 10 cols x 10 rows */}
-          <div className="grid grid-cols-5 md:grid-cols-10 gap-[1px] bg-slate-800 border border-slate-800 shadow-2xl relative z-10">
+          <div className="grid grid-cols-5 md:grid-cols-10 gap-[1px] bg-slate-800 border-4 border-red-700 shadow-2xl relative z-10 rounded-md">
             {sponsors.map((data, idx) => (
-              <SponsorCell 
-                key={idx} 
-                index={idx} 
-                data={data} 
+              <SponsorCell
+                key={idx}
+                index={idx}
+                data={data}
                 onClick={handleCellClick}
               />
             ))}
           </div>
-
-           
         </div>
-
-         
       </div>
 
       <AnimatePresence>
         {isModalOpen && (
-          <SponsorModal 
-            data={modalData} 
-            onClose={() => setIsModalOpen(false)} 
+          <SponsorModal
+            data={modalData}
+            onClose={() => setIsModalOpen(false)}
           />
         )}
       </AnimatePresence>

@@ -10,21 +10,21 @@ const DividerSection3 = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        trackRef.current,
-        { xPercent: 0 },
-        {
-          xPercent: 10,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true,          // 🔥 moves ONLY on scroll
-            invalidateOnRefresh: true,
+      const track = trackRef.current;
+      const totalWidth = track.scrollWidth / 2; // because duplicated
+
+      gsap.to(track, {
+        x: `-=${totalWidth}`,
+        duration: 20,
+        ease: "none",
+        repeat: -1,
+        modifiers: {
+          x: (x) => {
+            const value = parseFloat(x);
+            return `${value % totalWidth}px`;
           },
-        }
-      );
+        },
+      });
     }, sectionRef);
 
     return () => ctx.revert();

@@ -16,6 +16,9 @@ import DividerSection from "./Components/Divider";
 import AppLoader from "./Components/Loading";
 import DividerSection2 from "./Components/Divider2";
 import DividerSection3 from "./Components/Divider3";
+import RewardsSection from "./Components/rewards";
+import ScrollRewards from "./Components/rewards";
+import RewardScrollCards from "./Components/rewards";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,6 +77,7 @@ export default function App() {
                   <DividerSection2/>
                   <About />
                   <DividerSection />
+                  <RewardScrollCards/>
                   <ScrollSection />
                   <DividerSection3/>
                   <RegistrationForm />

@@ -169,10 +169,10 @@ const About = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
               {[
-                { icon: Zap, title: "Strength", index: 1 },
-                { icon: Crosshair, title: "Speed", index: 2 },
-                { icon: Users, title: "Endurance", index: 3 },
-                { icon: Target, title: "Coordination", index: 4 },
+                { icon: Zap, title: "Explosive Speed", index: 1 },
+                { icon: Crosshair, title: "Surgical Precision", index: 2 },
+                { icon: Users, title: "Squad Tactics", index: 3 },
+                { icon: Target, title: "Total Focus", index: 4 },
               ].map((item, i) => (
                 <FeatureCard
                   key={i}

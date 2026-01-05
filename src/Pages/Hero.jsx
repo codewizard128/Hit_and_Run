@@ -1,7 +1,8 @@
 import React from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Link } from "react-router-dom";
-import mainImage from '../assets/images/Group 60.png'
+import mainImage from "../assets/images/Group 60.png";
+import Banner from "../Components/banner";
 /* ---------- Button ---------- */
 const Button = ({
   children,
@@ -16,8 +17,7 @@ const Button = ({
   const counter = "md:skew-x-12 inline-flex items-center";
 
   const variants = {
-    primary:
-      "bg-red-600 text-white hover:bg-red-700 border-l-4 border-red-800",
+    primary: "bg-red-600 text-white hover:bg-red-700 border-l-4 border-red-800",
     secondary:
       "bg-white text-slate-900 hover:bg-slate-200 border-l-4 border-slate-400",
     outline:
@@ -40,6 +40,7 @@ const Button = ({
 const Hero = () => (
   <header className="relative min-h-[90vh] flex items-center overflow-hidden font-premium pb-6">
     {/* Background */}
+
     <div className="absolute inset-0 z-0 pointer-events-none">
       <div className="absolute inset-0 bg-transparent" />
       <div className="absolute top-0 right-0 h-full w-[45%] bg-red-700 -skew-x-12 translate-x-32 hidden lg:block shadow-[-50px_0_100px_rgba(0,0,0,0.5)]" />
@@ -47,24 +48,24 @@ const Hero = () => (
 
     <div className="container mx-auto px-4 mt-20 sm:px-6 relative z-10 pt-24 lg:pt-0">
       <div className="flex flex-col lg:flex-row items-center gap-12">
-
         {/* TEXT */}
         <div className="w-full lg:w-1/2 text-center lg:text-left">
+          <h5 className="inline-block text-xs font-extrabold text-red-600 uppercase tracking-widest animate-[pulse_1.5s_infinite]">
+            🟠2026 Registration Open
+          </h5>
+
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black italic text-white tracking-tighter leading-[0.9] mb-6">
             HIT{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">
               HARD.
             </span>
             <br />
-            RUN{" "}
-            <span className="text-slate-700">
-              FAST.
-            </span>
+            RUN <span className="text-slate-700">FAST.</span>
           </h1>
 
           <p className="text-sm sm:text-base lg:text-lg text-slate-400 max-w-md mx-auto lg:mx-0 mb-8 border-l-4 border-red-600 pl-4 sm:pl-6">
-            The most intense field sport. Precision mechanics meet
-            explosive speed in the ultimate test of athleticism.
+            The most intense field sport. Precision mechanics meet explosive
+            speed in the ultimate test of athleticism.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -105,8 +106,6 @@ const Hero = () => (
                   <div className="text-red-500 font-bold text-xs tracking-widest">
                     Hit and Run
                   </div>
-                   
-                   
                 </div>
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-white/30 flex items-center justify-center text-white">
                   <ArrowRight size={18} className="-rotate-45" />
